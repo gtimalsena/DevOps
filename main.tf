@@ -1,22 +1,33 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
     }
   }
 }
 
+# Provider Configuration
 
 provider "aws" {
-  profile = "default"
   region  = "us-east-1"
 }
 
+# data configuration for dynimic use
+
+
+
+# Resource Configuration
+
 resource "aws_instance" "appdemo" {
-  ami           = "ami-0947d2ba12ee1ff75"
-  instance_type = "t2.micro"
-  key_name = "Oct1"
+  ami           = "data.aws_ami.amazonlxn.id"
+  instance_type = var.instance_type # add variable here
+  key_name = var.key_name
+  vpc_security_group_ids = [aws_security_group.websg.id]
   tags = {
-    "Name" = "appdemo1"
+    Name = "devopsdemo1"
+    enviroment = "dev"
+    timetolive = "10"
+    backup = "yes"
+
   }
 }
