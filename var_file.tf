@@ -6,5 +6,6 @@ variable "instance_type" {
 }
 
 variable "key_name" {
+    default = "devopsdemo"
     type = string
 }

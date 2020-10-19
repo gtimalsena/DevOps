@@ -19,10 +19,11 @@ provider "aws" {
 # Resource Configuration
 
 resource "aws_instance" "appdemo" {
-  ami           = "data.aws_ami.amazonlxn.id"
+  ami           = data.aws_ami.amazonlnx.id
   instance_type = var.instance_type # add variable here
   key_name = var.key_name
-  vpc_security_group_ids = [aws_security_group.websg.id]
+  vpc_security_group_ids = [aws_security_group.web_sg.id , aws_security_group.ssh_sg.id ]
+  user_data = file("webpage.sh")
   tags = {
     Name = "devopsdemo1"
     enviroment = "dev"
