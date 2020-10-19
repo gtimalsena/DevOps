@@ -4,8 +4,8 @@ health_check {
   path = "/"
   protocol = "HTTP"
   timeout = 5
-  healthy_threshold = 5
-  unhealthy_threshold = 2
+  healthy_threshold = 6
+  unhealthy_threshold = 3
 }
 
   name     = "devops2tg"
