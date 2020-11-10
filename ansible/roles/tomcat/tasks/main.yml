@@ -8,3 +8,12 @@
   -  restart apache
 - name: Start and Enable httpd service
   service: name=httpd state=restarted enable=yes
+
+- name: cat file
+  shell: cat /tmp/hosts
+  register: cat_content_file
+
+- name: echo file
+  debug:
+    msg: "{{ cat_content_file.stdout }}"
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
