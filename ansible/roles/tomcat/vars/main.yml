@@ -1,1 +1,5 @@
 # vars file for /etc/ansible/roles/tomcat
+---
+vars: 
+  image_url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.welcomenepal.com%2Fplaces-to-see%2Fkathmandu.html&psig=AOvVaw2UALHhD9SzR2SnQiKYKIM7&ust=1605059393701000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDZ_6ru9uwCFQAAAAAdAAAAABAD
+  
