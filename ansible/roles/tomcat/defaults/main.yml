@@ -1,1 +1,10 @@
-
+---
+# defaults file for /etc/ansible/roles/tomcat
+- name: Add users to tomcat group
+  user:
+    group: "tomcat"
+    name: "tomcat"
+    password: "tomcat"
+    append: "yes"
+    state: "present"
+    createhome: "yes"
