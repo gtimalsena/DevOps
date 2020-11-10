@@ -1,1 +1,4 @@
-
+---
+# handlers file for /etc/ansible/roles/tomcat
+- name: restart apache
+  service: name=httpd state=restarted
