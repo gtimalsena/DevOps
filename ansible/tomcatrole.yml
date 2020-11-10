@@ -1,1 +1,5 @@
-
+---
+- hosts: webserver
+  become: true
+  roles:
+    - tomcat
